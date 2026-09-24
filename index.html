@@ -119,12 +119,12 @@
       <div class="title">hi my bestie siham 🤏😍</div>
       <div class="subtitle">كتبغيني🫶🥹🤭!</div>
       
-      <!-- صورة القط الكيوت الحزين المتغيرة -->
+      <!-- صورة القط الكيوت الحزين -->
       <img id="catImg" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z2cGZzaXB2b2RxZDltdzRqOHU1Ynl6dDJ0a3lsN2VpdXR4MHppdCZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" class="cute-gif" alt="Cute Cat">
       
       <div class="btn-container">
         <button class="btn btn-yes" onclick="showLoveLetter()">Yes</button>
-        <button class="btn btn-no" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">No</button>
+        <button class="btn btn-no" id="noBtn" onmouseover="handleNoAction()" onclick="handleNoAction()">No</button>
       </div>
     </div>
 
@@ -147,49 +147,41 @@
   </div>
 
   <script>
-    // قائمة ستيكرات قطط حزينة وكيوت
     const sadCatGifs = [
       "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z2cGZzaXB2b2RxZDltdzRqOHU1Ynl6dDJ0a3lsN2VpdXR4MHppdCZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif",
-      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmt6eThqNm90bThoN3RmdTNqdDRrbG81dW4xd3Jybms4czRtb3J4aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ISOckXUvpEFeM/giphy.gif",
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmt6eThqNm90bThoN3RmdTNqdDRrbG81dW4xd3Jybms4czRtb3J4aiZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/ISOckXUvpEFeM/giphy.gif",
       "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm5kYnkycXRia3YyZnhidmtscmVvZ2trY3M2cXNiaThub3VxcWh3byZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/L95W4wv8nnb9K/giphy.gif",
       "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnRoZWFocW8wd2oxbW9vdDF1dm1sYzJicWVwYmxpY2Zrbmh3ZDFxNSZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/OPU6wzx8JrHna/giphy.gif",
-      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndjNTRsdjhyZWR4bzEybHRubTFxdGNvMHgxdjdpOTNmdGthNHIwcCZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/X3VrxPijowGC4/giphy.gif",
-      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExczQxNmQ4N2drMWpncThldnhraGtkNmlwM3pydmxrbWFmZHFxbHJ5OSZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/d2lcHJTG5TpwPM40/giphy.gif"
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZndjNTRsdjhyZWR4bzEybHRubTFxdGNvMHgxdjdpOTNmdGthNHIwcCZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/X3VrxPijowGC4/giphy.gif"
     ];
 
-    // قائمة العبارات بالإنجليزية الحزينة والرجاء
     const noTexts = [
       "Are you sure? 🥺",
       "Think again! 💔",
       "Don't do this! 😭",
       "Really? 😿",
       "Give it a chance! 🎀",
-      "Please... 🥺❤️",
-      "Are you certain? 💔",
-      "No way! 🙈"
+      "Please... 🥺❤️"
     ];
 
-    let clickCount = 0;
+    let count = 0;
 
-    function moveNoButton() {
+    function handleNoAction() {
       const btn = document.getElementById('noBtn');
       const catImg = document.getElementById('catImg');
       const container = document.querySelector('.container');
+
+      // 1. تحريك الزر
       const containerRect = container.getBoundingClientRect();
       const btnRect = btn.getBoundingClientRect();
-
-      // تحريك الزر
       const newX = (Math.random() - 0.5) * (containerRect.width - btnRect.width);
       const newY = (Math.random() - 0.5) * 160;
       btn.style.transform = `translate(${newX}px, ${newY}px)`;
 
-      // تغيير صورة القط والعبارات بالتتابع
-      clickCount++;
-      const gifIndex = clickCount % sadCatGifs.length;
-      const textIndex = clickCount % noTexts.length;
-
-      catImg.src = sadCatGifs[gifIndex];
-      btn.innerText = noTexts[textIndex];
+      // 2. تغيير الصورة والنص
+      count++;
+      catImg.src = sadCatGifs[count % sadCatGifs.length];
+      btn.innerText = noTexts[count % noTexts.length];
     }
 
     function showLoveLetter() {
@@ -197,8 +189,8 @@
       document.getElementById('message-card').style.display = 'block';
       
       const music = document.getElementById('bgMusic');
-      music.play().catch(function(error) {
-        console.log("Audio play error:", error);
+      music.play().catch(function(err) {
+        console.log("Audio error:", err);
       });
     }
   </script>
