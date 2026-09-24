@@ -44,9 +44,10 @@
     .btn-container {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      align-items: center;
+      gap: 30px; /* مسافة مناسبة بين الزرين */
       position: relative;
-      min-height: 60px;
+      min-height: 80px;
     }
     .btn {
       padding: 12px 35px;
@@ -57,7 +58,7 @@
       font-weight: bold;
       color: white;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
+      transition: transform 0.2s, background-color 0.2s;
     }
     .btn-yes {
       background-color: #ffb3c1;
@@ -68,7 +69,7 @@
     }
     .btn-no {
       background-color: #ffb3c1;
-      position: absolute;
+      position: relative; /* لجعل الزر بجانب زر Yes بشكل طبيعي */
     }
     .message-card {
       display: none;
@@ -116,7 +117,7 @@
       <div class="title">hi my bestie siham 🤏😍</div>
       <div class="subtitle">كتبغيني🫶🥹🤭!</div>
       
-      <!-- صورة الدب الكيوت المتحرك -->
+      <!-- صورة الدب المتحرك -->
       <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z2cGZzaXB2b2RxZDltdzRqOHU1Ynl6dDJ0a3lsN2VpdXR4MHppdCZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" class="cute-gif" alt="Cute Bear">
       
       <div class="btn-container">
@@ -151,19 +152,15 @@
       const btnRect = btn.getBoundingClientRect();
 
       const newX = (Math.random() - 0.5) * (containerRect.width - btnRect.width);
-      const newY = (Math.random() - 0.5) * 180;
+      const newY = (Math.random() - 0.5) * 160;
 
       btn.style.transform = `translate(${newX}px, ${newY}px)`;
     }
 
     function showLoveLetter() {
-      // إخفاء الواجهة الأولى بالكامل
       document.getElementById('quiz-box').style.display = 'none';
-      
-      // إظهار بطاقة الرسالة
       document.getElementById('message-card').style.display = 'block';
       
-      // تشغيل الصوت
       const music = document.getElementById('bgMusic');
       music.play().catch(function(error) {
         console.log("Audio play error:", error);
@@ -173,3 +170,4 @@
 
 </body>
 </html>
+
