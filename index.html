@@ -119,8 +119,8 @@
       <div class="title">hi my bestie siham 🤏😍</div>
       <div class="subtitle">كتبغيني🫶🥹🤭!</div>
       
-      <!-- صورة القط الكيوت الحزين -->
-      <img id="catImg" src="https://media.tenor.com/images/32e3a8fa799a7413a96f1d24803d1db9/tenor.gif" class="cute-gif" alt="Cute Cat">
+      <!-- صورة القط الأولى -->
+      <img id="catImg" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Crying%20Cat.png" class="cute-gif" alt="Cute Cat">
       
       <div class="btn-container">
         <button class="btn btn-yes" onclick="showLoveLetter()">Yes</button>
@@ -147,13 +147,13 @@
   </div>
 
   <script>
-    // روابط صور متحركة ومستقرة لقطط حزينة
+    // 5 ملصقات قطط حزينة وكيوت مضمونة الاستضافة
     const sadCatGifs = [
-      "https://media.tenor.com/images/32e3a8fa799a7413a96f1d24803d1db9/tenor.gif",
-      "https://media.tenor.com/images/13c1f1f7d5eb4e6e026df17d598501e5/tenor.gif",
-      "https://media.tenor.com/images/d31671e72e11e03a93e3612fb9c3b878/tenor.gif",
-      "https://media.tenor.com/images/c2fbd40bbfb77ff0a599bdf934f810aa/tenor.gif",
-      "https://media.tenor.com/images/e9dc322c3328eef6df3ff83a4537ee2a/tenor.gif"
+      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Crying%20Cat.png",
+      "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f63f.svg",
+      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Sad%20But%20Relieved%20Face.png",
+      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Loudly%20Crying%20Face.png",
+      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Pleading%20Face.png"
     ];
 
     const noTexts = [
@@ -179,7 +179,7 @@
       const newY = (Math.random() - 0.5) * 160;
       btn.style.transform = `translate(${newX}px, ${newY}px)`;
 
-      // 2. تغيير الصورة والنص
+      // 2. تغيير الملصق والنص
       count++;
       catImg.src = sadCatGifs[count % sadCatGifs.length];
       btn.innerText = noTexts[count % noTexts.length];
