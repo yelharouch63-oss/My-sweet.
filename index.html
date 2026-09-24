@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi my bestie Siham 😍</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Segoe UI', cursive, sans-serif;
+    }
+    body {
+      background-color: #fcf8e3;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .title {
+      font-size: 26px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 24px;
+      color: #444;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .cute-gif {
+      width: 180px;
+      height: auto;
+      margin-bottom: 25px;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+      min-height: 60px;
+    }
+    .btn {
+      padding: 12px 35px;
+      font-size: 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .btn-yes {
+      background-color: #ffb3c1;
+    }
+    .btn-yes:hover {
+      transform: scale(1.1);
+      background-color: #ff94a8;
+    }
+    .btn-no {
+      background-color: #ffb3c1;
+      position: absolute;
+    }
+    .message-card {
+      display: none;
+      background: #ffffff;
+      padding: 30px 25px;
+      border-radius: 30px;
+      border: 4px dashed #ffb3c1;
+      box-shadow: 0 10px 25px rgba(255, 179, 193, 0.3);
+      text-align: right;
+      line-height: 1.9;
+      font-size: 17px;
+      color: #4a4a4a;
+      position: relative;
+      animation: popup 0.8s ease-in-out;
+    }
+    .message-card::before {
+      content: "💖";
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      font-size: 30px;
+    }
+    .message-card::after {
+      content: "🌸";
+      position: absolute;
+      bottom: -20px;
+      left: 20px;
+      font-size: 30px;
+    }
+    @keyframes popup {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- مشغل الموسيقى -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div id="quiz-box">
+      <div class="title">hi my bestie siham 🤏😍</div>
+      <div class="subtitle">كتبغيني🫶🥹🤭!</div>
+      
+      <!-- صورة الدب الكيوت المتحرك -->
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z2cGZzaXB2b2RxZDltdzRqOHU1Ynl6dDJ0a3lsN2VpdXR4MHppdCZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" class="cute-gif" alt="Cute Bear">
+      
+      <div class="btn-container">
+        <button class="btn btn-yes" onclick="showLoveLetter()">Yes</button>
+        <button class="btn btn-no" id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">No</button>
+      </div>
+    </div>
+
+    <div id="message-card" class="message-card">
+إلى أرق وأغلى إنسانة في هذا الوجود 👑💖
+هل تعلمين في كثير من الأحيان أرجع بذاكرتي إلى ذلك اليوم الأول الذي رأيتك فيه من الأعلى 🕊️ ذلك اليوم الذي ظننت فيه أنني مجرد شخص يلمح فتاة جميلة 🌸 ولم أكن أعلم أنني في تلك اللحظة كنت أنظر إلى مستقبلي وإلى الشخص الذي سيقلب حياتي رأسا على عقب ✨
+
+طوال حياتي كنت أشعر بتنافر غريب مع هذا العالم وكأنني في كفة والناس جميعا في كفة أخرى إلى أن تقاطعت طرقنا 💫 في تلك اللحظة بالذات ولأول مرة في حياتي شعرت بجاذبية عجيبة 🧲 وبسكينة وراحة نادرة أثبتت لي أنك لست مجرد عابرة في حياتي بل أنت الجزء الذي كان ناقصا في روحي 🧩
+
+معك أنت فقط تعلمت كيف يستمتع الإنسان حتى في لحظات الخسارة ♟️ حين كنا نلعب الشطرنج وتغلبينني كانت الابتسامة ترتسم في قلبي قبل وجهي 🥹 لأن الخسارة أمامك هي أعظم فوز لي ولأن الرابح الحقيقي هو أنا الذي حظيت بفرصة الدخول إلى عالمك 🗝️
+
+أنت لست جميلة فحسب أنت ملاك حقيقي في صورة إنسانة 👼🏼 بتلك الطيبة التي تغمر قلبك 🤍 وبذلك الخجل العذب الذي يحمر له وجنتاك 🙈 وتلك العينين الواسعتين الهادئتين كعيون الغزال 🦌 اللتين أسرح فيهما وأنسى معهما الوجود أنت النقاء الذي كنت أبحث عنه في هذا العالم 💎
+
+أريدك أن تعلمي أن كل موقف صمدت فيه لأجلك 🛡️ وكل كلمة قيلت بيننا وكل ضحكة تشاركناها قد حفرت في قلبي إلى الأبد أنت لست خيارا في حياتي بل أنت الأولوية الأولى والأخيرة 🥇 وأنت الإنسانة التي أنا مستعد لأجلها أن أقف بوجه العالم وأحميك من أدنى حزن أو كذب قد يمس قلبك 🤲🏻
+
+وحين شاركتني رؤيتك المليئة بالثقة والأمل أدركت أن لحياتي معنى حقيقيا بوجودك 🌈 أعدك أن أكون لك السند والأمان وأن أبني لك المستقبل الجميل الذي تستحقينه 🏛️ وسأظل أفعل كل ما في وسعي لتبقى تلك الابتسامة المشرقة مرسومة على وجهك 😊
+
+شكرا لأنك في حياتي وشكرا لأنك أخذت بيدي وعلمتني كيف أحب بصدق 🫂 أحبك جدا أكثر بكثير مما تستطيع أية كلمات أن تصف ❤️✨
+    </div>
+  </div>
+
+  <script>
+    function moveNoButton() {
+      const btn = document.getElementById('noBtn');
+      const container = document.querySelector('.container');
+      const containerRect = container.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+
+      const newX = (Math.random() - 0.5) * (containerRect.width - btnRect.width);
+      const newY = (Math.random() - 0.5) * 180;
+
+      btn.style.transform = `translate(${newX}px, ${newY}px)`;
+    }
+
+    function showLoveLetter() {
+      // إخفاء الواجهة الأولى بالكامل
+      document.getElementById('quiz-box').style.display = 'none';
+      
+      // إظهار بطاقة الرسالة
+      document.getElementById('message-card').style.display = 'block';
+      
+      // تشغيل الصوت
+      const music = document.getElementById('bgMusic');
+      music.play().catch(function(error) {
+        console.log("Audio play error:", error);
+      });
+    }
+  </script>
+
+</body>
+</html>
