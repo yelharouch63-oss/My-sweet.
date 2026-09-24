@@ -37,10 +37,11 @@
       font-weight: bold;
     }
     .cute-gif {
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
       object-fit: contain;
       margin-bottom: 25px;
+      border-radius: 20px;
     }
     .btn-container {
       display: flex;
@@ -119,8 +120,8 @@
       <div class="title">hi my bestie siham 🤏😍</div>
       <div class="subtitle">كتبغيني🫶🥹🤭!</div>
       
-      <!-- صورة القط الأولى -->
-      <img id="catImg" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Crying%20Cat.png" class="cute-gif" alt="Cute Cat">
+      <!-- الصورة الأولى: قطة تقبل الشاشة -->
+      <img id="catImg" src="https://media.tenor.com/71239c054366e6c1e345bbf7df5d40db/tenor.gif" class="cute-gif" alt="Cat GIF">
       
       <div class="btn-container">
         <button class="btn btn-yes" onclick="showLoveLetter()">Yes</button>
@@ -147,51 +148,55 @@
   </div>
 
   <script>
-    // 5 ملصقات قطط حزينة وكيوت مضمونة الاستضافة
+    // 6 صور متحركة لقطط حزينة وتبكي متتالية
     const sadCatGifs = [
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Crying%20Cat.png",
-      "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f63f.svg",
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Sad%20But%20Relieved%20Face.png",
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Loudly%20Crying%20Face.png",
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Pleading%20Face.png"
+      "https://media.tenor.com/J3yO4O2d2mEAAAAC/cat-crying.gif",           // 1. قطة تبكي بدموع
+      "https://media.tenor.com/X4sY_338KcoAAAAC/cat-sad.gif",              // 2. قطة حزينة جداً
+      "https://media.tenor.com/hE1M_A3W1aEAAAAC/sad-cat.gif",              // 3. قطة تنظر بحزن شديد
+      "https://media.tenor.com/gK9u5sT2GlsAAAAC/crying-cat-cat-crying.gif", // 4. قطة تبكي بشدة
+      "https://media.tenor.com/w9c5A7QG8yUAAAAC/sad-crying.gif",           // 5. قطة متأثرة وحزينة
+      "https://media.tenor.com/6U4l8A0f4nAAAAAC/sad-cat-crying-cat.gif"    // 6. قطة تبكي بحرقة
     ];
 
     const noTexts = [
       "Are you sure? 🥺",
       "Think again! 💔",
-      "Don't do this! 😭",
+      "Don't break my heart! 😭",
       "Really? 😿",
       "Give it a chance! 🎀",
-      "Please... 🥺❤️"
+      "Please say Yes... 🥺❤️"
     ];
 
     let count = 0;
+    const music = document.getElementById('bgMusic');
 
     function handleNoAction() {
       const btn = document.getElementById('noBtn');
       const catImg = document.getElementById('catImg');
       const container = document.querySelector('.container');
 
-      // 1. تحريك الزر
+      // تحريك زر No بعيداً
       const containerRect = container.getBoundingClientRect();
       const btnRect = btn.getBoundingClientRect();
       const newX = (Math.random() - 0.5) * (containerRect.width - btnRect.width);
       const newY = (Math.random() - 0.5) * 160;
       btn.style.transform = `translate(${newX}px, ${newY}px)`;
 
-      // 2. تغيير الملصق والنص
-      count++;
+      // تغيير الصورة والنص بين الصور الـ6
       catImg.src = sadCatGifs[count % sadCatGifs.length];
       btn.innerText = noTexts[count % noTexts.length];
+      
+      count++;
     }
 
     function showLoveLetter() {
       document.getElementById('quiz-box').style.display = 'none';
       document.getElementById('message-card').style.display = 'block';
       
-      const music = document.getElementById('bgMusic');
+      // تشغيل الموسيقى فور الضغط على Yes
+      music.currentTime = 0;
       music.play().catch(function(err) {
-        console.log("Audio error:", err);
+        console.log("Audio play error:", err);
       });
     }
   </script>
